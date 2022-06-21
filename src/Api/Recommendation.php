@@ -3,6 +3,7 @@
 namespace Ebay\Sell\Recommendation\Api;
 
 use Ebay\Sell\Recommendation\Model\FindListingRecommendationRequest;
+use OpenAPI\Runtime\UnexpectedResponse;
 
 class Recommendation extends AbstractAPI
 {
@@ -61,9 +62,9 @@ class Recommendation extends AbstractAPI
      *                                                  'X-EBAY-C-MARKETPLACE-ID'	string	Use this header to specify the eBay marketplace
      *                                                  where you list the items for which you want to get recommendations
      *
-     * @return mixed
+     * @return UnexpectedResponse
      */
-    public function finds(FindListingRecommendationRequest $Model, array $queries = [], array $headers = []): mixed
+    public function finds(FindListingRecommendationRequest $Model, array $queries = [], array $headers = []): UnexpectedResponse
     {
         return $this->request(
         'findListingRecommendations',
